@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
         var moveAction = InputSystem.actions.FindAction("Move");
         var hInput = moveAction.ReadValue<Vector2>().x;
         transform.Translate(hInput * speed * Time.deltaTime * Vector3.right);
-
-
+        
+        //  player can walk left right/but not falling off map.
         if (transform.position.x < -Xrange)
         {
             transform.position = new Vector3(-4, transform.position.y, transform.position.z);
@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(4, transform.position.y, transform.position.z);
         }
-
 
         // plyer go straight
         Transform t = GetComponent<Transform>();
