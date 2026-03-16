@@ -6,17 +6,20 @@ public class PointController : MonoBehaviour
     [SerializeField] private Transform pointB;
     [SerializeField] private RectTransform SafeZone;
     [SerializeField] private int movespeed;
-    bool isPress;
+    bool isPress; // for check prees 
 
-    private float diraction = 1f;
+    private float diraction;
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject skillCheck;
+
+    
     void Start()
     {
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
+        skillCheck.SetActive(true);
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class PointController : MonoBehaviour
         if (RectTransformUtility.RectangleContainsScreenPoint(SafeZone, pointerTransform.position, null))
         {
             Debug.Log("Success");
+            skillCheck.SetActive(false); // success = UI close
             
         }
         else
