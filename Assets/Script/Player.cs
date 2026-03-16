@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] public float speed;
     public float Xrange = 4;
+
+    public Rigidbody rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
         }
 
         // plyer go straight
-        Transform t = GetComponent<Transform>();
-        t.Translate(0,0,speed * Time.deltaTime);
+        /*Transform t = GetComponent<Transform>();
+        t.Translate(0,0,speed * Time.deltaTime);*/
     }
 }

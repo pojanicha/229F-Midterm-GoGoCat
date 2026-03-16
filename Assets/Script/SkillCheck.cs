@@ -8,6 +8,11 @@ public class PointController : MonoBehaviour
     [SerializeField] private int movespeed;
     bool isPress; // for check prees 
 
+    //[SerializeField] private Object player;
+    
+    //test
+    public Player player;
+
     
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
@@ -17,6 +22,8 @@ public class PointController : MonoBehaviour
     
     void Start()
     {
+        
+        
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
         skillCheck.SetActive(true);
@@ -55,6 +62,11 @@ public class PointController : MonoBehaviour
         {
             Debug.Log("Success");
             skillCheck.SetActive(false); // success = UI close
+
+            //test fix later
+            player.rb.AddForce(Vector3.forward * 20f, ForceMode.Impulse);
+
+            
             
         }
         else
