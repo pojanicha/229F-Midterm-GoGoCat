@@ -26,7 +26,7 @@ public class PointController : MonoBehaviour
         
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
-        skillCheck.SetActive(true);
+        skillCheck.SetActive(false);
     }
 
     // Update is called once per frame
