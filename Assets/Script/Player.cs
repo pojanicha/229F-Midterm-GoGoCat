@@ -7,8 +7,7 @@ public class Player : MonoBehaviour
     public float Xrange = 4;
 
     public Rigidbody rb;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+       // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         

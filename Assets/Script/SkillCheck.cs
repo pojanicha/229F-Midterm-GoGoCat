@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class PointController : MonoBehaviour
 {
+    
+    // for Skill check UI
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
     [SerializeField] private RectTransform SafeZone;
     [SerializeField] private int movespeed;
     bool isPress; // for check prees 
 
-    //[SerializeField] private Object player;
-    
+    //Newton Law 2
+    [SerializeField] float force;
+    [SerializeField] float mass;
+    [SerializeField] float acc;
+
+
     //test
     public Player player;
-
-    
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
 
@@ -21,15 +25,15 @@ public class PointController : MonoBehaviour
 
     
     void Start()
-    {
-        
-        
+    { 
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
         skillCheck.SetActive(false);
     }
 
     // Update is called once per frame
+
+
     void Update()
     {
         pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, movespeed * Time.deltaTime);
@@ -56,6 +60,13 @@ public class PointController : MonoBehaviour
         }
     }
 
+    void CalculateForce()
+    {
+        mass = player.rb.mass;
+        force = mass * acc;
+        player.rb.AddForce(0, force, 0);
+    }
+
     void CheckSuccess()
     {
         if (RectTransformUtility.RectangleContainsScreenPoint(SafeZone, pointerTransform.position, null))
@@ -63,13 +74,7 @@ public class PointController : MonoBehaviour
             Debug.Log("Success");
             skillCheck.SetActive(false); // success = UI close
 
-            //test fix later
-            player.rb.AddForce(Vector3.up * 15f, ForceMode.Impulse);
-
-            //Time.timeScale = 1;
-
-            
-            
+            CalculateForce();
         }
         else
         {
