@@ -64,7 +64,9 @@ public class PointController : MonoBehaviour
             skillCheck.SetActive(false); // success = UI close
 
             //test fix later
-            player.rb.AddForce(Vector3.forward * 20f, ForceMode.Impulse);
+            player.rb.AddForce(Vector3.up * 20f, ForceMode.Impulse);
+
+            //Time.timeScale = 1;
 
             
             

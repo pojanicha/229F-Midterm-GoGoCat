@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
 
         // plyer go straight
-        /*Transform t = GetComponent<Transform>();
-        t.Translate(0,0,speed * Time.deltaTime);*/
+        Transform t = GetComponent<Transform>();
+        t.Translate(0,0,speed * Time.deltaTime);
     }
 }

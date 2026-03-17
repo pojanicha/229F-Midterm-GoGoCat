@@ -11,6 +11,7 @@ public class ShowUI : MonoBehaviour
 
             Debug.Log("player here");
             ui.SetActive(true);
+           // Time.timeScale = 0.5f;
         }
     }
 
