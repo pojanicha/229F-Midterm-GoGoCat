@@ -1,0 +1,24 @@
+using UnityEngine;
+using TMPro;
+
+public class CreditScrolling : MonoBehaviour
+{
+    public float scrollSpeed = 50f; // Speed at which the credits scroll
+
+    private RectTransform rectTransform;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        rectTransform.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
+        // Check if the credits have scrolled past a certain point (e.g., off-screen)
+
+    }
+}

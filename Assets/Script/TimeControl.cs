@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeControl : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class TimeControl : MonoBehaviour
         else
         {
             timeScale = 0;
+
         }
 
         int minutes = Mathf.FloorToInt(timeScale / 60);
