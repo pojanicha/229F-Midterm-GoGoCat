@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //When hit collider will load the scene "Credit"
     {
         if (other.CompareTag("Player"))
         {

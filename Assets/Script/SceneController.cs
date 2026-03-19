@@ -13,16 +13,16 @@ public class SceneController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject);       
         }
     }
 
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(string sceneName) // Method to load a scene by name
     {
         SceneManager.LoadScene(sceneName);
     }
