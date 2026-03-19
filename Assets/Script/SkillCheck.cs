@@ -8,7 +8,7 @@ public class PointController : MonoBehaviour
     [SerializeField] private Transform pointB;
     [SerializeField] private RectTransform SafeZone;
     [SerializeField] private int movespeed;
-    //bool isPress; // for check prees 
+    bool isPress = false; // for check prees 
 
     //Newton Law 2
     [SerializeField] float force;
@@ -49,14 +49,14 @@ public class PointController : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !isPress)
         {
             CheckSuccess();
-            //isPress = false;
+            isPress = true;
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            //isPress = true;
+            isPress = false;
         }
     }
 

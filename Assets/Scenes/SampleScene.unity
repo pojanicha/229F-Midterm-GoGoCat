@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1900401408}
-  timeScale: 6
+  timeScale: 61
   gameManager: {fileID: 1998716155}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
