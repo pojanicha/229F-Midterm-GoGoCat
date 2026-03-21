@@ -23,7 +23,9 @@ public class PointController : MonoBehaviour
 
     public GameObject skillCheck;
 
-    
+    int reducedTime = 5;
+
+
     void Start()
     { 
         pointerTransform = GetComponent<RectTransform>();
@@ -79,6 +81,7 @@ public class PointController : MonoBehaviour
         else
         {
             Debug.Log("Fall jaaaa");
+            TimeControl.Instance.ReduceTime(reducedTime);
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
 
-    int reducedTime = 5;
+    [SerializeField] int reducedTime;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
