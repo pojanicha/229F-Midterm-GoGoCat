@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class TimeControl : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class TimeControl : MonoBehaviour
     public GameManager gameManager;
     bool isGameOver = false;
 
+    public static TimeControl Instance; // for call this script easily ja
 
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,4 +49,22 @@ public class TimeControl : MonoBehaviour
 
 
     }
+
+    public void ReduceTime(float amount) // Reduce time (use in obstacle scripts)
+    {
+        timeScale -= amount;
+        if (timeScale < 0) timeScale = 0;
+
+        StartCoroutine(ChancgeColor());
+    }
+
+    IEnumerator ChancgeColor() // use this to specify the color change duration.
+    {
+        timeText.color = Color.red;
+
+        yield return new WaitForSeconds(0.5f);
+
+        timeText.color = Color.white;
+    }
+
 }
