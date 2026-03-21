@@ -53,14 +53,30 @@ public class TimeControl : MonoBehaviour
     public void ReduceTime(float amount) // Reduce time (use in obstacle scripts)
     {
         timeScale -= amount;
-        if (timeScale < 0) timeScale = 0;
 
-        StartCoroutine(ChancgeColor());
+        StartCoroutine(ChancgeColorRed());
     }
 
-    IEnumerator ChancgeColor() // use this to specify the color change duration.
+    IEnumerator ChancgeColorRed() // use this to specify the color change duration.
     {
         timeText.color = Color.red;
+
+        yield return new WaitForSeconds(0.5f);
+
+        timeText.color = Color.white;
+    }
+
+    public void AddTime(float amount)
+    {
+        timeScale += amount;
+
+        StartCoroutine(ChancgeColorGreen());
+        
+    }
+
+    IEnumerator ChancgeColorGreen()
+    {
+        timeText.color = Color.green;
 
         yield return new WaitForSeconds(0.5f);
 

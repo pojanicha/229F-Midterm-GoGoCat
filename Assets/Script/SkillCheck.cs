@@ -77,6 +77,8 @@ public class PointController : MonoBehaviour
             skillCheck.SetActive(false); // success = UI close
 
             CalculateForce();
+
+            
         }
         else
         {
