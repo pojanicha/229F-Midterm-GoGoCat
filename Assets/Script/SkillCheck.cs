@@ -64,7 +64,8 @@ public class SkillCheck : MonoBehaviour
     {
         mass = player.rb.mass;
         force = mass * acc;
-        player.rb.AddForce(0, force, 0);
+        //player.rb.AddForce(0, force, 0);
+        player.rb.AddForce(0,force,0);
     }
 
     void CheckSuccess()
