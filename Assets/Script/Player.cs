@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] public float speed;
-    public float Xrange = 4;
+    public float Xrange = 6;
 
     public Rigidbody rb;
        // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,11 +24,11 @@ public class Player : MonoBehaviour
         //  player can walk left right/but not falling off map.
         if (transform.position.x < -Xrange)
         {
-            transform.position = new Vector3(-4, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-Xrange, transform.position.y, transform.position.z);
         }
         else if (transform.position.x > Xrange)
         {
-            transform.position = new Vector3(4, transform.position.y, transform.position.z);
+            transform.position = new Vector3(Xrange, transform.position.y, transform.position.z);
         }
 
         // plyer go straight

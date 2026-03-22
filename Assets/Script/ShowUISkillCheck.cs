@@ -4,6 +4,7 @@ public class ShowUI : MonoBehaviour
 {
     public GameObject ui;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,7 +19,7 @@ public class ShowUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame

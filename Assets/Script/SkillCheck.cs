@@ -1,6 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PointController : MonoBehaviour
+public class SkillCheck : MonoBehaviour
 {
     
     // for Skill check UI
@@ -8,7 +9,6 @@ public class PointController : MonoBehaviour
     [SerializeField] private Transform pointB;
     [SerializeField] private RectTransform SafeZone;
     [SerializeField] private int movespeed;
-    bool isPress = false; // for check prees 
 
     //Newton Law 2
     [SerializeField] float force;
@@ -31,6 +31,7 @@ public class PointController : MonoBehaviour
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
         skillCheck.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -51,15 +52,12 @@ public class PointController : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.Space) && !isPress)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             CheckSuccess();
-            isPress = true;
+           
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isPress = false;
-        }
+        
     }
 
     void CalculateForce()
@@ -74,7 +72,9 @@ public class PointController : MonoBehaviour
         if (RectTransformUtility.RectangleContainsScreenPoint(SafeZone, pointerTransform.position, null))
         {
             Debug.Log("Success");
+            
             skillCheck.SetActive(false); // success = UI close
+            
 
             CalculateForce();
 
