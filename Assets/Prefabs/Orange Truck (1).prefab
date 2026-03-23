@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reducedTime: 5
-  hitClip: {fileID: 8300000, guid: 7bb83ca62d2532e42984c2ca74cbbc23, type: 3}
+  hitClip: {fileID: 8300000, guid: ce8934b5a0afd7847bc2a94eb8eebdfe, type: 3}
 --- !u!65 &4711323632932537268
 BoxCollider:
   m_ObjectHideFlags: 0

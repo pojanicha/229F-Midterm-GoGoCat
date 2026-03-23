@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CreditScrolling : MonoBehaviour
 {
@@ -20,5 +21,15 @@ public class CreditScrolling : MonoBehaviour
         rectTransform.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
         // Check if the credits have scrolled past a certain point (e.g., off-screen)
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        { 
+            SceneManager.LoadScene("Menu");
+
+        }
+
     }
+
+
+
+
 }
