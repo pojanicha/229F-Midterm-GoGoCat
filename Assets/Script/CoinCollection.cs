@@ -32,7 +32,7 @@ public class CoinCollection : MonoBehaviour
 		{
 			Coin++;
 			
-			CoinText.text = "Coin: " + Coin.ToString();
+			CoinText.text = "Egg: " + Coin.ToString();
 			Debug.Log(Coin);
 			audioSource.PlayOneShot(coinSound); // Play the coin sound effect
             Destroy(other.gameObject);
