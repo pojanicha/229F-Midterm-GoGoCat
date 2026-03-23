@@ -7,9 +7,26 @@ public class CoinCollection : MonoBehaviour
 	private int maxCoin = 10;
 	private int addTime = 5;
 
-	public TextMeshProUGUI CoinText;
+	private AudioSource audioSource;
+	public AudioClip coinSound;
 
-	private void OnTriggerEnter(Collider other)
+    public TextMeshProUGUI CoinText;
+
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+		{ 
+			audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component if it doesn't exist
+
+        }
+    }
+
+
+
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Coin")) //Check if the collide object has tag "Coin"
 		{
@@ -17,7 +34,8 @@ public class CoinCollection : MonoBehaviour
 			
 			CoinText.text = "Coin: " + Coin.ToString();
 			Debug.Log(Coin);
-			Destroy(other.gameObject);
+			audioSource.PlayOneShot(coinSound); // Play the coin sound effect
+            Destroy(other.gameObject);
 
 			if (Coin == maxCoin)
 			{
