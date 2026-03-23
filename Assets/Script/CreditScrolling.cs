@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CreditScrolling : MonoBehaviour
 {
-    public float scrollSpeed = 50f; // Speed at which the credits scroll
+    public float scrollSpeed = 70f; // Speed at which the credits scroll
 
     private RectTransform rectTransform;
 
