@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reducedTime: 5
-  hitClip: {fileID: 8300000, guid: af3313129a2cb304785acd3714ae2838, type: 3}
+  hitClip: {fileID: 8300000, guid: ce8934b5a0afd7847bc2a94eb8eebdfe, type: 3}
 --- !u!82 &6153517794952632327
 AudioSource:
   m_ObjectHideFlags: 0
