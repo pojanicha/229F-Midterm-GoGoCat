@@ -1,18 +1,21 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverUI;
     public static GameManager Instance;
+ 
 
-void Awake()
+    void Awake()
     {
-     Instance = this;
+        Instance = this;
+        //DontDestroyOnLoad(gameObject); // Persist the GameManager across scenes
 
     }
-
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +29,9 @@ void Awake()
         
     }
 
+
+
+
     public void GameOver()
     {
         Time.timeScale = 0f; // Stop the game time
@@ -34,6 +40,7 @@ void Awake()
 
     public void OnMenuClick()
     {
+        Time.timeScale = 1f; // Resume the game time
         SceneManager.LoadScene("Menu");
     }
 
