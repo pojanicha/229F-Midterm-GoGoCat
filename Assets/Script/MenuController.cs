@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     public void OnStartClick()
     { 
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GamePlay");
     }
 
 
@@ -20,8 +20,14 @@ public class MenuController : MonoBehaviour
 
     public void OnExitClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false; // for editor
-        Application.Quit();
+        /*UnityEditor.EditorApplication.isPlaying = false; // for editor
+        Application.Quit();*/
+
+        #if UNITY_EDITOR
+          UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
 
